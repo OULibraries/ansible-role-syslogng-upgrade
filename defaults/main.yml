@@ -1,2 +1,8 @@
 ---
 # defaults file for ansible-role-syslogng-upgrade
+
+# Syslog-NG Tarball Builder
+syslogng-url: https://github.com/balabit/syslog-ng/releases/download
+syslogng-version: 3.20.1
+syslogng-remote-src: {{ syslogng-url }}/syslog-ng-{{syslogng-version}}/syslog-ng-{{syslogng-version}}.tar.gz
+

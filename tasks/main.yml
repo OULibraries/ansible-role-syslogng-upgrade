@@ -1,2 +1,6 @@
 ---
-# tasks file for ansible-role-syslogng-upgrade
+- include: yum.yml
+  tags: yum
+
+- include: deploy_src.yml
+  tags: deploy

@@ -1,0 +1,10 @@
+---
+- name: Install Source Compilation Dependencies
+  yum:
+    name:
+      - libtool
+      - make
+      - autoconf
+      - automake
+    state: present
+  tags:  yum

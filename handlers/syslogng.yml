@@ -1,0 +1,5 @@
+---
+- name: restart syslogng
+  service:
+    name: syslog-ng
+    state: restarted
