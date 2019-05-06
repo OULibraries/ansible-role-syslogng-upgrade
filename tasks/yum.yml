@@ -1,10 +1,14 @@
 ---
-- name: Install Source Compilation Dependencies
+- name: Install Unofficial Syslog-NG RPM Repository
+  yum_repository:
+    name: syslog-ng
+    description: COPR Build Service Syslog-NG Repo
+    baseurl: https://copr.fedorainfracloud.org/coprs/czanik/syslog-ng319/repo/epel-7/czanik-syslog-ng319-epel-7.repo
+
+- name: Install Syslog-NG
+  become: true 
   yum:
-    name:
-      - libtool
-      - make
-      - autoconf
-      - automake
+    name: syslog-ng
     state: present
-  tags:  yum
+  notify: restart syslog-ng
+
