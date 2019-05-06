@@ -6,9 +6,13 @@ Syslog-NG Upgrade role with two way encrypted communication using certificates f
 Requirements
 ------------
 
-A target system running CentOS7x.
-OULibraries.syslogng
-Make Tools
+* A target system running CentOS7x.
+* [OULibraries.syslogng](https://github.com/OULibraries/ansible-role-syslogng)
+* Make Tools
+  * libtool 
+  * make 
+  * autoconf 
+  * automake 
 
 Role Variables
 --------------
