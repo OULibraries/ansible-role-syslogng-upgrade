@@ -2,7 +2,7 @@
 - name: Install official Syslog-NG release from GitHub
   become: true
   unarchive:
-    src: {{ syslogng-remote-src }}
+    src: "{{ syslogng-remote-src }}"
     dest: /tmp/
     remote_src: true
   tags: syslog-ng  
@@ -10,17 +10,17 @@
 - name: Configure source
   command: ./configure
   args:
-    chdir: /tmp/syslogng-{{ syslogng-version }}
+    chdir: "/tmp/syslogng-{{ syslogng-version }}"
   tags: configure
 
 - name: Build source
   make:
-    chdir: /tmp/syslogng-{{ syslogng-version }}
+    chdir: "/tmp/syslogng-{{ syslogng-version }}"
   tags: build
 
 - name: Install source from makefile and restart syslog-ng
   make:
-    chdir: /tmp/syslogng-{{ syslogng-version }}
+    chdir: "/tmp/syslogng-{{ syslogng-version }}"
     target: install
   become: true
   notify: restart syslog-ng
